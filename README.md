@@ -1,6 +1,6 @@
 # Hjernebyggesettet - Web 
-_A neural network simulator written in javascript for the web._
 
+![Build status](https://travis-ci.com/hjernebyggesettet/hjernebyggesettet-web.svg?branch=master)
 
 ## Getting started
 
