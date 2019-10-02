@@ -43,13 +43,13 @@ const workspace = createNeuralNetworkWorkspace(
     color: {
       excitatory: '#24CC76',
       inhibitory: '#f94b4a',
-      background: 'white',
+      background: '#ffffff',
       tooling: '#353535',
-      actionPotential: '#F3F1B7',
-      adjusting: '#9a449b' 
+      actionPotential: '#f3f1b7',
+      adjusting: '#9a449b'
     },
     neuron: {
-      radius: 15,
+      radius: 16,
       adjustRingThickness: 2,
       adjustRingRadius: 30
     },
