@@ -1,12 +1,12 @@
 export default function createGameTimer() {
-  let updateIncrement = 1 / 120
-  let lastTime = 0
-  let accumulator = 0
-  let tick = 0
-  let frameId = null
+  let updateIncrement = 1 / 120;
+  let lastTime = 0;
+  let accumulator = 0;
+  let tick = 0;
+  let frameId = null;
 
-  let updateCallback = () => {}
-  let renderCallback = () => {}
+  let updateCallback = () => {};
+  let renderCallback = () => {};
 
   /**
    * Helper function for timing simulation and rendering
@@ -14,43 +14,43 @@ export default function createGameTimer() {
    */
   function onFrame(time) {
     if (lastTime !== null) {
-      accumulator += (time - lastTime) / 1000
+      accumulator += (time - lastTime) / 1000;
       while (accumulator > updateIncrement) {
-        updateCallback(updateIncrement, tick)
-        tick++
-        accumulator -= updateIncrement
+        updateCallback(updateIncrement, tick);
+        tick++;
+        accumulator -= updateIncrement;
       }
     }
-    lastTime = time
-    renderCallback()
-    frameId = requestAnimationFrame(onFrame)
+    lastTime = time;
+    renderCallback();
+    frameId = requestAnimationFrame(onFrame);
   }
 
   function render(callback) {
-    renderCallback = callback
+    renderCallback = callback;
   }
 
   function update(callback) {
-    updateCallback = callback
+    updateCallback = callback;
   }
 
   function setUpdateFrequency(frequency) {
-    updateIncrement = 1 / frequency
+    updateIncrement = 1 / frequency;
   }
 
   /**
    * Method for starting animation (rendering) and simulation (update).
    */
   function start() {
-    lastTime = null
-    frameId = requestAnimationFrame(onFrame)
+    lastTime = null;
+    frameId = requestAnimationFrame(onFrame);
   }
 
   /**
    * Stops animation and simulation.
    */
   function stop() {
-    cancelAnimationFrame(frameId)
+    cancelAnimationFrame(frameId);
   }
 
   return {
@@ -59,5 +59,5 @@ export default function createGameTimer() {
     setUpdateFrequency,
     start,
     stop
-  }
-} 
+  };
+}
