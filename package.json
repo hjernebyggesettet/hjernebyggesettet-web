@@ -5,7 +5,10 @@
   "main": "src/index.html",
   "scripts": {
     "start": "parcel src/index.html --open",
-    "build": "parcel build src/index.html --public-url ./ --no-source-maps"
+    "build": "parcel build src/index.html --public-url ./ --no-source-maps",
+    "check-format": "prettier --check src/js/*",
+    "format": "prettier --write src/js/*"
+    
   },
   "repository": {
     "type": "git",
@@ -22,6 +25,7 @@
   "homepage": "https://hjernebyggesettet.github.io",
   "devDependencies": {
     "parcel-bundler": "^1.12.3",
-    "parcel-plugin-clean-dist": "0.0.6"
+    "parcel-plugin-clean-dist": "0.0.6",
+    "prettier": "1.18.2"
   }
 }
