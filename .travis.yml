@@ -4,6 +4,7 @@ node_js:
 cache: npm
 
 script:
+  - npm run check-format # Make sure code adheres to prettier code style
   - npm run build
 
 deploy:
